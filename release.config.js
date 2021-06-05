@@ -1,6 +1,6 @@
 module.exports = {
   branches: 'main',
-  repositoryUrl: 'https://github.com/karthickthankyou/zillow-refactor',
+  repositoryUrl: 'https://github.com/karthickthankyou/epicgames-clone',
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
