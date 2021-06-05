@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react'
+import { calculateTimeLeft, ICounter } from '../../../utils'
+
+const dateFormat = require('dateformat')
 export interface ICard04Props {
   free: boolean
   gameTitle: string
@@ -15,6 +19,14 @@ const Card04 = ({ gameTitle, displayImage, free, date }: ICard04Props) => {
         text: 'Mystery Game',
         bgColor: 'bg-gray-800',
       }
+
+  const [counter, setCounter] = useState<ICounter>(calculateTimeLeft(date))
+
+  useEffect(() => {
+    const timer = setTimeout(() => setCounter(calculateTimeLeft(date)), 1000)
+    return () => clearTimeout(timer)
+  }, [counter, date])
+
   return (
     <div className="w-full">
       <img
@@ -32,11 +44,14 @@ const Card04 = ({ gameTitle, displayImage, free, date }: ICard04Props) => {
         {free ? (
           <>
             <div>{gameTitle}</div>
-            <div className="text-sm text-gray-300">Free Now - {date}</div>
+            <div className="text-sm text-gray-300">
+              Free Now - {dateFormat(date, 'mmm d "at" h:MM TT')}
+            </div>
           </>
         ) : (
-          <div className="flex items-center justify-center h-12">
-            Unlocking in {date}
+          <div className="flex items-center justify-center h-12 font-mono">
+            Unlocking in{' '}
+            {`${counter.days}:${counter.hours}:${counter.minutes}:${counter.seconds}`}
           </div>
         )}
       </div>
