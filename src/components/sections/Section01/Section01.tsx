@@ -1,3 +1,5 @@
+import React from 'react'
+import OutlineButton from '../../atoms/OutlineButton'
 import Card01 from '../../cards/Card01'
 export interface ISection01Props {
   sectionTitle: string
@@ -12,9 +14,7 @@ const Section01 = ({
     <div>
       <div className="flex items-center justify-between">
         <div>{sectionTitle}</div>
-        <button className="px-2 py-1 text-xs tracking-wider uppercase border border-gray-200 rounded">
-          {buttonText}
-        </button>
+        <OutlineButton buttonText={buttonText} />
       </div>
       <div className="grid grid-cols-1 gap-2 mt-3 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
         <Card01

@@ -3,13 +3,18 @@ import { calculateTimeLeft, ICounter } from '../../../utils'
 
 const dateFormat = require('dateformat')
 export interface ICard04Props {
-  free: boolean
   gameTitle: string
   displayImage: string
   date: string
+  free?: boolean
 }
 
-const Card04 = ({ gameTitle, displayImage, free, date }: ICard04Props) => {
+const Card04 = ({
+  gameTitle,
+  displayImage,
+  free = false,
+  date,
+}: ICard04Props) => {
   const { text, bgColor } = free
     ? {
         text: 'Free Now',
@@ -17,7 +22,7 @@ const Card04 = ({ gameTitle, displayImage, free, date }: ICard04Props) => {
       }
     : {
         text: 'Mystery Game',
-        bgColor: 'bg-gray-800',
+        bgColor: 'bg-gray-700',
       }
 
   const [counter, setCounter] = useState<ICounter>(calculateTimeLeft(date))
@@ -31,7 +36,7 @@ const Card04 = ({ gameTitle, displayImage, free, date }: ICard04Props) => {
     <div className="w-full">
       <img
         src={displayImage}
-        className="inset-0 object-cover w-full max-w-lg rounded-t-lg h-72"
+        className="inset-0 object-cover w-full max-w-lg rounded-t-lg cursor-pointer h-72 filter hover:brightness-125"
         alt=""
       />
       <div
