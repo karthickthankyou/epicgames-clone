@@ -18,7 +18,7 @@ const Card01 = ({
     <div>
       <img
         src={displayImage}
-        className="object-cover w-full rounded-b-sm h-60"
+        className="object-cover w-full rounded rounded-b-sm cursor-pointer h-60 filter hover:brightness-125"
         alt=""
       />
       <p className="w-full mt-2 truncate ...">{gameTitle}</p>
