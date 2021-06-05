@@ -6,14 +6,19 @@ export interface ICard03Props {
   gameTitle: string
   price: IPriceCardProps
   displayImage: string
-  favorite: boolean
+  favorite?: boolean
 }
 
-const Card03 = ({ gameTitle, price, displayImage, favorite }: ICard03Props) => {
+const Card03 = ({
+  gameTitle,
+  price,
+  displayImage,
+  favorite = false,
+}: ICard03Props) => {
   const [cardHover, setCardHover] = useState(false)
   return (
     <div
-      className="flex items-start p-3 transition-all bg-gray-800 hover:bg-gray-700"
+      className="flex items-start px-6 py-3 transition-all bg-gray-800 cursor-pointer hover:bg-gray-700"
       onMouseEnter={() => setCardHover(true)}
       onMouseLeave={() => setCardHover(false)}
     >
@@ -26,7 +31,9 @@ const Card03 = ({ gameTitle, price, displayImage, favorite }: ICard03Props) => {
         <p className="w-full max-w-xs line-clamp-2">{gameTitle}</p>
         <PriceCard {...price} />
       </div>
-      <AddToFavorites favorite={favorite} hovered={cardHover} />
+      <div className="mt-2 ml-auto">
+        <AddToFavorites favorite={favorite} hovered={cardHover} />
+      </div>
     </div>
   )
 }

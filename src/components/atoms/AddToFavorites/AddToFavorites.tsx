@@ -2,17 +2,20 @@ import { CheckCircleIcon, PlusCircleIcon } from '@heroicons/react/outline'
 import React from 'react'
 
 export interface IAddToFavoritesProps {
-  favorite: boolean
+  favorite?: boolean
   hovered: boolean
 }
 
-const AddToFavorites = ({ favorite, hovered }: IAddToFavoritesProps) => {
+const AddToFavorites = ({
+  favorite = false,
+  hovered,
+}: IAddToFavoritesProps) => {
   const Icon = favorite ? CheckCircleIcon : PlusCircleIcon
   const ToolTipText = favorite ? 'Remove from wishlist' : 'Add to wishlist'
   return (
     <button className="relative transition-all group">
       <Icon
-        className={`w-6 h-6 m-2 text-gray-300 hover:text-white ${
+        className={`w-6 h-6 text-gray-300 hover:text-white ${
           hovered ? 'opacity-100' : 'opacity-0'
         } `}
       />
