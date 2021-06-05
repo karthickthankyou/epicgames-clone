@@ -53,5 +53,5 @@ module.exports = {
       boxShadow: ['active'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 }

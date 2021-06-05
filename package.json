@@ -5,6 +5,7 @@
   "dependencies": {
     "@craco/craco": "^6.1.2",
     "@storybook/addon-a11y": "^6.2.9",
+    "@tailwindcss/line-clamp": "^0.2.1",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",

@@ -2,11 +2,12 @@ import { discountCalc, withCurrency } from '../../../utils'
 export interface IPriceCardProps {
   price: number
   discount?: number
+  classes?: string
 }
 
-const PriceCard = ({ price, discount }: IPriceCardProps) => {
+const PriceCard = ({ price, discount, classes }: IPriceCardProps) => {
   return (
-    <div className="text-sm text-gray-200">
+    <div className={`text-sm text-gray-200 ${classes}`}>
       {discount && price ? (
         <>
           <span className="px-1 py-0.5 mr-2 bg-blue-700 rounded-sm">
