@@ -2,7 +2,6 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 import Card03, { ICard03Props } from './Card03'
 import * as PriceCardStory from '../../atoms/PriceCard/PriceCard.stories'
-import * as AddToFavoritesStory from '../../atoms/AddToFavorites/AddToFavorites.stories'
 import image from '../../assets/game.jpg'
 
 export default {
