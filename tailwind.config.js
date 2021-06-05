@@ -51,6 +51,7 @@ module.exports = {
     extend: {
       cursor: ['hover', 'active'],
       boxShadow: ['active'],
+      visibility: ['group-hover'],
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
