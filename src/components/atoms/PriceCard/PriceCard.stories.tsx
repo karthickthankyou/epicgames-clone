@@ -9,6 +9,10 @@ export default {
 
 const Template: Story<IPriceCardProps> = (args) => <PriceCard {...args} />
 
+export const Free = Template.bind({})
+Free.args = {
+  price: 0,
+}
 export const WithDiscount = Template.bind({})
 WithDiscount.args = {
   price: 4.99,
