@@ -1,65 +1,32 @@
 import React from 'react'
 import OutlineButton from '../../atoms/OutlineButton'
-import Card03 from '../Card03'
+import Card03, { ICard03Props } from '../Card03'
 export interface IGroupCard03Props {
   groupTitle: string
+  viewMore?: boolean
+  data: ICard03Props[]
 }
 
-const GroupCard03 = ({ groupTitle }: IGroupCard03Props) => {
+const GroupCard03 = ({
+  groupTitle,
+  data,
+  viewMore = false,
+}: IGroupCard03Props) => {
   return (
     <div className="w-full bg-gray-800">
-      <div className="flex items-center justify-between px-6 py-3">
-        <div className="text-lg text-gray-300">{groupTitle}</div>
-        <OutlineButton buttonText="View More" />
+      <div className="flex items-center justify-between px-6 py-3 mt-3">
+        <div>{groupTitle}</div>
+        {viewMore && <OutlineButton buttonText="View More" />}
       </div>
       <div>
-        <Card03
-          displayImage="static/media/game.e4f1f703.jpg"
-          favorite
-          gameTitle="Cyberpunk 2077"
-          price={{
-            price: 10,
-          }}
-        />
-        <Card03
-          displayImage="static/media/game.e4f1f703.jpg"
-          gameTitle="Cyberpunk 2077"
-          price={{
-            price: 10,
-            discount: 15,
-          }}
-        />
-        <Card03
-          displayImage="static/media/game.e4f1f703.jpg"
-          gameTitle="Cyberpunk 2077"
-          price={{
-            price: 0,
-          }}
-        />
-        <Card03
-          displayImage="static/media/game.e4f1f703.jpg"
-          favorite
-          gameTitle="Cyberpunk 2077"
-          price={{
-            price: 4.99,
-          }}
-        />
-        <Card03
-          displayImage="static/media/game.e4f1f703.jpg"
-          gameTitle="Cyberpunk 2077"
-          price={{
-            price: 4.99,
-            discount: 50,
-          }}
-        />
-        <Card03
-          displayImage="static/media/game.e4f1f703.jpg"
-          favorite
-          gameTitle="Cyberpunk 2077"
-          price={{
-            price: 0,
-          }}
-        />
+        {data.map((d) => (
+          <Card03
+            displayImage={d.displayImage}
+            favorite={d.favorite}
+            gameTitle={d.gameTitle}
+            price={d.price}
+          />
+        ))}
       </div>
     </div>
   )

@@ -1,2 +1,3 @@
-import Card03 from './Card03'
+import Card03, { ICard03Props } from './Card03'
+export type { ICard03Props }
 export default Card03
