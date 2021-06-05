@@ -20,6 +20,7 @@ module.exports = {
       base: ['1rem', '1.5rem'],
       lg: ['1.25rem', '2rem'],
       xl: ['2rem', '2.5rem'],
+      '2xl': ['3rem', '3.25rem'],
     },
     lineHeight: {
       1: '1rem',
@@ -46,6 +47,9 @@ module.exports = {
         grabbing: 'grabbing',
       },
     },
+    maxWidth: {
+      xxs: '16rem',
+    },
   },
   variants: {
     extend: {
@@ -53,6 +57,7 @@ module.exports = {
       boxShadow: ['active'],
       visibility: ['group-hover'],
       brightness: ['hover'],
+      zIndex: ['hover'],
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
