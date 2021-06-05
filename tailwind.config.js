@@ -46,9 +46,9 @@ module.exports = {
         grab: 'grab',
         grabbing: 'grabbing',
       },
-    },
-    maxWidth: {
-      xxs: '16rem',
+      maxWidth: {
+        xxs: '16rem',
+      },
     },
   },
   variants: {
