@@ -1,7 +1,9 @@
 import React from 'react'
 
+import Navbar from './components/sections/Navbar'
+
 function App() {
-  return <div className="p-3">Hello World!</div>
+  return <Navbar />
 }
 
 export default App

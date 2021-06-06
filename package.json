@@ -17,6 +17,7 @@
     "dateformat": "^3.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.3.2",
     "web-vitals": "^1.1.2"
@@ -79,6 +80,7 @@
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
     "@types/dateformat": "^3.0.1",
+    "@types/react-router-dom": "^5.1.7",
     "autoprefixer": "^9.8.6",
     "chromatic": "^5.9.0",
     "cz-conventional-changelog": "^3.3.0",

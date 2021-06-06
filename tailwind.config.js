@@ -56,6 +56,7 @@ module.exports = {
       cursor: ['hover', 'active'],
       boxShadow: ['active'],
       visibility: ['group-hover'],
+      translate: ['group-hover'],
       brightness: ['hover'],
       zIndex: ['hover'],
     },
