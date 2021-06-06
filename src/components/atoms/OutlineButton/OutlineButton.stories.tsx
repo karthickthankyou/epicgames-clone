@@ -12,4 +12,6 @@ const Template: Story<IOutlineButtonProps> = (args) => (
 )
 
 export const Primary = Template.bind({})
-Primary.args = {}
+Primary.args = {
+  buttonText: 'Hello World',
+}

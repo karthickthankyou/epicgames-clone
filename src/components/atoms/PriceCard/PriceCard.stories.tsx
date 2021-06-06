@@ -7,7 +7,11 @@ export default {
   component: PriceCard,
 } as Meta
 
-const Template: Story<IPriceCardProps> = (args) => <PriceCard {...args} />
+const Template: Story<IPriceCardProps> = (args) => (
+  <div className="flex items-center justify-center w-screen h-screen">
+    <PriceCard {...args} />
+  </div>
+)
 
 export const Free = Template.bind({})
 Free.args = {

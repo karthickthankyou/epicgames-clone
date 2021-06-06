@@ -8,7 +8,9 @@ export default {
 } as Meta
 
 const Template: Story<IAddToFavoritesProps> = (args) => (
-  <AddToFavorites {...args} />
+  <div className="flex items-center justify-center w-screen h-screen">
+    <AddToFavorites {...args} />
+  </div>
 )
 
 export const Primary = Template.bind({})
