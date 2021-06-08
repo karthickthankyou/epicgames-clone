@@ -26,7 +26,7 @@ const SortDropdown = ({}: ISortDropdownProps) => {
   return (
     <div className="relative">
       <button
-        className="flex justify-between w-full p-2 border"
+        className="flex justify-between w-full p-2"
         onClick={() => setOpen((state) => !state)}
       >
         Sortby: {sortby}
@@ -41,10 +41,15 @@ const SortDropdown = ({}: ISortDropdownProps) => {
           {sortByOptions.map((option) => {
             return (
               <button
-                className={`block w-full p-2 text-left hover:bg-gray-700 ${
-                  option === sortby && 'bg-gray-600'
+                className={`block w-full p-2 text-left  hover:bg-gray-700  ${
+                  option === sortby
+                    ? ' underline text-gray-100'
+                    : 'text-gray-400'
                 }`}
-                onClick={() => setSortby(option)}
+                onClick={() => {
+                  setSortby(option)
+                  setOpen(false)
+                }}
               >
                 {option}
               </button>

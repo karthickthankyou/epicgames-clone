@@ -98,18 +98,22 @@ const Accordion = ({}: IAccordionProps) => {
   console.log(filters)
 
   return (
-    <div>
+    <div className="w-80">
       <div className="flex justify-between p-3">
-        <div className="capitalize">filters ({filters.length})</div>
-        <button
-          onClick={() => {
-            updateCategories([])
-            updateFilters([])
-          }}
-          className="uppercase"
-        >
-          reset
-        </button>
+        <div className="capitalize">
+          filters {filters.length > 0 && <> ({filters.length})</>}
+        </div>
+        {filters.length > 0 && (
+          <button
+            onClick={() => {
+              updateCategories([])
+              updateFilters([])
+            }}
+            className="uppercase"
+          >
+            reset
+          </button>
+        )}
       </div>
       <div>
         {allFilters.map((filter) => (
@@ -129,23 +133,20 @@ const Accordion = ({}: IAccordionProps) => {
                 {filter.name}
               </button>
               {categories.includes(filter.name) ? (
-                <ChevronDownIcon className="w-6 h-6 ml-auto mr-2 text-gray-400" />
+                <ChevronDownIcon className="w-5 h-5 ml-auto mr-2 text-gray-500" />
               ) : (
-                <ChevronUpIcon className="w-6 h-6 ml-auto mr-2 text-gray-400" />
+                <ChevronUpIcon className="w-5 h-5 ml-auto mr-2 text-gray-500" />
               )}
             </div>
             <div>
               {categories.includes(filter.name) &&
                 filter.options.map((option) => {
                   return (
-                    <div className="flex items-center px-6">
-                      {filters.includes(option) && (
-                        <CheckIcon className="w-4 h-4 mr-2 text-gray-200" />
-                      )}
+                    <div className="flex items-center">
                       <button
                         key={option}
-                        className={`py-1.5 block w-full text-left flex-grow ${
-                          filters.includes(option) && 'font-semibold'
+                        className={`py-1.5 px-6 items-center flex w-full text-gray-400 text-left flex-grow ${
+                          filters.includes(option) && 'bg-gray-800'
                         }`}
                         onClick={() =>
                           updateFilters((draft) => {
@@ -166,6 +167,9 @@ const Accordion = ({}: IAccordionProps) => {
                         }
                       >
                         {option}
+                        {filters.includes(option) && (
+                          <CheckIcon className="w-4 h-4 ml-auto mr-2 text-gray-200" />
+                        )}
                       </button>
                     </div>
                   )
