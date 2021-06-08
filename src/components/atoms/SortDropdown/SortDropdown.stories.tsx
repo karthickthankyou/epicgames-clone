@@ -9,5 +9,13 @@ export default {
 
 const Template: Story<ISortDropdownProps> = (args) => <SortDropdown {...args} />
 
+const sortByOptions = [
+  'Relevance',
+  'New Release',
+  'Release Date',
+  'Alphabetical',
+  'Price: Low to High',
+  'Price: High to Low',
+]
 export const Primary = Template.bind({})
-Primary.args = {}
+Primary.args = { sortByOptions: sortByOptions }

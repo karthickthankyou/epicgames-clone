@@ -9,7 +9,16 @@ const BrowseGames = ({}: IBrowseGamesProps) => {
     <div className="flex">
       <div className="w-full ">
         <div className="flex justify-between my-1">
-          <SortDropdown />
+          <SortDropdown
+            sortByOptions={[
+              'Relevance',
+              'New Release',
+              'Release Date',
+              'Alphabetical',
+              'Price: Low to High',
+              'Price: High to Low',
+            ]}
+          />
           <div className="block md:hidden">Filter</div>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

@@ -117,7 +117,7 @@ const Accordion = ({}: IAccordionProps) => {
       </div>
       <div>
         {allFilters.map((filter) => (
-          <div className="border-t border-b border-gray-700 ">
+          <div key={filter.name} className="border-t border-b border-gray-700 ">
             <div className="flex items-center">
               <button
                 className="flex-grow px-3 py-2 text-sm font-thin tracking-widest text-left text-gray-300 uppercase border-b border-gray-800"
