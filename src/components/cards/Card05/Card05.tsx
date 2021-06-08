@@ -51,8 +51,8 @@ const Card05 = ({
           </button>
         </div>
       </div>
-      <button className="absolute top-0 left-0 z-10">
-        <XIcon className="w-8 h-8 p-1 text-gray-500 bg-black hover:text-gray-100 hover:bg-opacity-60 bg-opacity-20" />
+      <button className="absolute top-0 right-0 z-10">
+        <XIcon className="w-8 h-8 p-2 text-gray-500 hover:text-gray-100 " />
       </button>
     </div>
   )
