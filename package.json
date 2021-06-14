@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.1.2",
+    "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
     "@storybook/addon-a11y": "^6.2.9",
     "@tailwindcss/line-clamp": "^0.2.1",

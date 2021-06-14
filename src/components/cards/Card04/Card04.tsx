@@ -7,6 +7,7 @@ export interface ICard04Props {
   displayImage: string
   date: string
   free?: boolean
+  classes?: string
 }
 
 const Card04 = ({
@@ -14,6 +15,7 @@ const Card04 = ({
   displayImage,
   free = false,
   date,
+  classes,
 }: ICard04Props) => {
   const { text, bgColor } = free
     ? {
@@ -33,10 +35,10 @@ const Card04 = ({
   }, [counter, date])
 
   return (
-    <div className="w-full">
+    <div className={`w-full ${classes}`}>
       <img
         src={displayImage}
-        className="inset-0 object-cover w-full max-w-lg rounded-t-lg cursor-pointer h-72 filter hover:brightness-125"
+        className="object-cover w-full rounded-t-lg cursor-pointer h-72 filter hover:brightness-125"
         alt=""
       />
       <div

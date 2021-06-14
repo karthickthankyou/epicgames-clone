@@ -4,6 +4,7 @@ import {
   UserCircleIcon,
   GlobeAltIcon,
 } from '@heroicons/react/outline'
+import Home from '../../pages/Home'
 export interface INavbarProps {}
 
 const Navbar = ({}: INavbarProps) => {
@@ -130,7 +131,9 @@ const Navbar = ({}: INavbarProps) => {
           </h1>
         </Route>
         <Route path="/">
-          <h1 className="flex items-center justify-center h-72">Home</h1>
+          <h1 className="flex items-center justify-center h-72">
+            <Home />
+          </h1>
         </Route>
       </Switch>
     </div>

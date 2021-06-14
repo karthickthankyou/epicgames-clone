@@ -22,3 +22,27 @@ export const calculateTimeLeft = (date: string): ICounter => {
     seconds: String(Math.floor((diff / 1000) % 60)).padStart(2, '0'),
   }
 }
+
+export const Timer = function (callback: TimerHandler, delay: any) {
+  let timerId: number,
+    start: number,
+    remaining = delay
+
+  const pause = function () {
+    clearTimeout(timerId)
+    remaining -= Date.now() - start
+  }
+
+  const clear = function () {
+    clearTimeout(timerId)
+  }
+
+  const resume = function () {
+    start = Date.now()
+    clearTimeout(timerId)
+    timerId = setTimeout(callback, remaining)
+  }
+
+  resume()
+  return { pause, resume, clear }
+}

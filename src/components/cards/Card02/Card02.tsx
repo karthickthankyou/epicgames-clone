@@ -15,7 +15,7 @@ const Card02 = ({
   displayImage,
 }: ICard02Props) => {
   return (
-    <div className="overflow-hidden bg-gray-800 rounded-sm hover:bg-gray-700">
+    <div className="bg-gray-800 rounded-sm min-w-24 md:w-full md:min-w-full hover:bg-gray-700">
       <img
         src={displayImage}
         className="object-cover w-full transition-all rounded-b-sm cursor-pointer h-60 filter hover:brightness-125"

@@ -17,7 +17,7 @@ const SectionCard04 = ({}: ISectionCard04Props) => {
         </div>
         <OutlineButton buttonText="View More" />
       </div>
-      <div className="grid grid-cols-1 gap-3 mt-2 sm:grid-cols-2">
+      <div className="flex flex-col mt-6 space-y-6 md:flex-row md:space-x-6 md:space-y-0 ">
         <Card04
           date="2021-06-10T08:30:00Z"
           displayImage="static/media/game.e4f1f703.jpg"
@@ -28,7 +28,18 @@ const SectionCard04 = ({}: ISectionCard04Props) => {
           date="2021-06-10T08:30:00Z"
           displayImage="static/media/game.e4f1f703.jpg"
           gameTitle="Cyberpunk 2077"
+          free
         />
+        <Card04
+          date="2021-06-17T08:30:00Z"
+          displayImage="static/media/game.e4f1f703.jpg"
+          gameTitle="Cyberpunk 2077"
+        />
+        {/* <Card04
+          date="2021-06-10T08:30:00Z"
+          displayImage="static/media/game.e4f1f703.jpg"
+          gameTitle="Cyberpunk 2077"
+        /> */}
       </div>
     </div>
   )

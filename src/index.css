@@ -5,6 +5,10 @@
   @apply translate-y-0;
 }
 
+.hide-last:last-child {
+  display: none;
+}
+
 @tailwind utilities;
 
 @layer base {

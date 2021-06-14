@@ -49,6 +49,18 @@ module.exports = {
       maxWidth: {
         xxs: '16rem',
       },
+      minWidth: {
+        24: '24rem',
+      },
+      zIndex: {
+        '-30': '-30',
+        '-20': '-20',
+        '-10': '-10',
+      },
+      transitionDuration: {
+        0: '0ms',
+        5000: '5000ms',
+      },
     },
   },
   variants: {
@@ -59,6 +71,9 @@ module.exports = {
       translate: ['group-hover'],
       brightness: ['hover'],
       zIndex: ['hover'],
+      display: ['last'],
+      padding: ['last'],
+      margin: ['last'],
     },
   },
   plugins: [require('@tailwindcss/line-clamp')],
